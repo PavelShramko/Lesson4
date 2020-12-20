@@ -10,21 +10,21 @@ import com.example.lesson4.R
 import com.example.lesson4.utils.ArgumentManager
 
 
-class FirstFragment: Fragment(R.layout.fragment_first) {
+class FirstFragment : Fragment(R.layout.fragment_first) {
 
     var textView: TextView? = null
     var counter: TextView? = null
 
+
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_first, container, false)
 
         textView = view.findViewById(R.id.textView)
         counter = view.findViewById(R.id.counter)
-
 
         return view
     }
@@ -33,19 +33,16 @@ class FirstFragment: Fragment(R.layout.fragment_first) {
         super.onViewCreated(view, savedInstanceState)
 
         val argumentManager = ArgumentManager()
-
         val counterValue = argumentManager.getCounter(arguments)
         counter?.text = "$counterValue"
 
         textView?.setOnClickListener {
-
-
             parentFragmentManager.beginTransaction().apply {
                 setReorderingAllowed(true)
                 add(
-                    R.id.fragment_container_view1,
-                    FirstFragment::class.java,
-                    argumentManager.createArgs(counterValue+1))
+                        R.id.hostFragmentOne,
+                        FirstFragment::class.java,
+                        argumentManager.createArgs(counterValue + 1))
                 addToBackStack(null)
 
                 commit()
