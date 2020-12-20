@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
 
             supportFragmentManager.beginTransaction().apply {
 
-
                 setReorderingAllowed(true)
                 add(R.id.fragment_container_view, fragment1)
                 addToBackStack("HostFragmentOne")

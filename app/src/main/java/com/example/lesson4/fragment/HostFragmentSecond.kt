@@ -19,12 +19,12 @@ class HostFragmentSecond : Fragment(R.layout.fragment_cont_second) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
+        val fragment2 = SecondFragment()
         childFragmentManager.beginTransaction().apply {
 
             setReorderingAllowed(true)
-            add(R.id.hostFragmentSecond, SecondFragment())
+            add(R.id.hostFragmentSecond, fragment2)
             addToBackStack(null)
 
             commit()

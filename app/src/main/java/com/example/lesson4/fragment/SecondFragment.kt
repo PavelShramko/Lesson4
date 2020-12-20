@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.example.lesson4.R
 import com.example.lesson4.utils.ArgumentManager
 
-class SecondFragment : Fragment() {
+class SecondFragment : Fragment(R.layout.fragment_second) {
 
     var textView: TextView? = null
     var counter: TextView? = null
@@ -29,10 +29,8 @@ class SecondFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
         val argumentManager = ArgumentManager()
-
         val counterValue = argumentManager.getCounter(arguments)
         counter?.text = "$counterValue"
 
