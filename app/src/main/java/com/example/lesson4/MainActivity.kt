@@ -41,7 +41,6 @@ class MainActivity : AppCompatActivity() {
                 hide(fragment2)
                 show(fragment1)
                 setPrimaryNavigationFragment(fragment1)
-                //addToBackStack(null)
 
                 commit()
             }
@@ -55,7 +54,6 @@ class MainActivity : AppCompatActivity() {
                 hide(fragment1)
                 show(fragment2)
                 setPrimaryNavigationFragment(fragment2)
-                //addToBackStack(null)
 
                 commit()
             }
