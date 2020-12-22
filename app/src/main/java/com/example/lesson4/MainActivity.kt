@@ -23,10 +23,11 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction().apply {
 
                 setReorderingAllowed(true)
-                add(R.id.fragment_container_view, fragment1)
-                addToBackStack("HostFragmentOne")
                 add(R.id.fragment_container_view, fragment2)
                 addToBackStack("HostFragmentSecond")
+                add(R.id.fragment_container_view, fragment1)
+                addToBackStack("HostFragmentOne")
+
 
                 commit()
             }
@@ -36,10 +37,11 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction().apply {
 
                 setReorderingAllowed(true)
-                setPrimaryNavigationFragment(fragment1)
+
                 hide(fragment2)
                 show(fragment1)
-                addToBackStack(null)
+                setPrimaryNavigationFragment(fragment1)
+                //addToBackStack(null)
 
                 commit()
             }
@@ -49,10 +51,11 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction().apply {
 
                 setReorderingAllowed(true)
-                setPrimaryNavigationFragment(fragment2)
+
                 hide(fragment1)
                 show(fragment2)
-                addToBackStack(null)
+                setPrimaryNavigationFragment(fragment2)
+                //addToBackStack(null)
 
                 commit()
             }
