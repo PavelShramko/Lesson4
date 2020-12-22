@@ -15,7 +15,6 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
     var textView: TextView? = null
     var counter: TextView? = null
 
-
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
